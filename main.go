@@ -1,7 +1,16 @@
 package main
 
-// import "groupie"
+import (
+	"groupie/handlers"
+	"net/http"
+)
 
 func main() {
-	// groupie.Start
+	
+	
+	http.HandleFunc("/", handlers.HandleHome)
+	err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		// handlers.HandlerErr("Status Internal Server Error", http.StatusInternalServerError)
+	}
 }
