@@ -11,5 +11,5 @@ func GetJson(URL string, data any) error {
 		return err
 	}
 	defer res.Body.Close()
-	return json.NewDecoder(res.Body).Decode(&data)
+	return json.NewDecoder(res.Body).Decode(data)
 }

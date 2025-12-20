@@ -3,9 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/statics/style.css" />
     <title>Document</title>
   </head>
   <body>
-    {{.}}
+    <div class="container">
+      <div class="hero">
+        <p>Unlock your imagination</p>
+        <h1 class="frHead"><span>A</span> JOURNEY</h1>
+        <h1 class="scHead">THROUGH MUSIC</h1>
+      </div>
+      <div class="cardContainer">
+        {{range .}}
+        <div class="card">
+          <div class="image">
+            <img src="{{.Image}}" alt="" />
+          </div>
+          <div class="info">
+            <a href=""></a>
+            <a href='{{printf "/artist%d" .Id}}'>{{.Name}}</a>
+            <p>Creation Date : {{.CreationDate}}</p>
+            <p>First Album : {{.FirstAlbum}}</p>
+          </div>
+        </div>
+        {{end}}
+      </div>
+    </div>
   </body>
 </html>

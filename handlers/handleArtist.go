@@ -4,10 +4,6 @@ import (
 	"net/http"
 )
 
-type arrArtist struct {
-	arrArtist []artist
-}
-
 type artist struct {
 	Id           int      `json:"id"`
 	Image        string   `json:"image"`
@@ -26,12 +22,12 @@ func HandleArtist(w http.ResponseWriter, r any) {
 		return
 	}
 
-	var myArtistes arrArtist
+	var arrArtist []artist
 	url := "https://groupietrackers.herokuapp.com/api/artists"
-	err := GetJson(url, &myArtistes.arrArtist)
+	err := GetJson(url, &arrArtist)
 	if err != nil {
 		HandlerErr(w, "fetching Errore", http.StatusNotFound)
 		return
 	}
-	Temp.ExecuteTemplate(w, "index.html", myArtistes.arrArtist)
+	Temp.ExecuteTemplate(w, "index.html", arrArtist)
 }

@@ -7,7 +7,7 @@ import (
 
 func main() {
 	
-	
+	http.HandleFunc("/statics/" , handlers.HandleForbiden)
 	http.HandleFunc("/", handlers.HandleHome)
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
