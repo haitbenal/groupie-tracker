@@ -19,20 +19,114 @@
         <h1 class="frHead"><span>A</span> JOURNEY</h1>
         <h1 class="scHead">THROUGH MUSIC</h1>
       </div>
+
       <div class="cardContainer">
-        {{range .}}
+        {{range .}} {{if lt .Id 11}}
         <div class="card">
           <div class="image">
             <img src="{{.Image}}" alt="" />
           </div>
           <div class="info">
-            <a href=""></a>
             <a href='{{printf "/artist%d" .Id}}'>{{.Name}}</a>
-            <p>Creation Date : {{.CreationDate}}</p>
-            <p>First Album : {{.FirstAlbum}}</p>
+            <a href='{{printf "/artist%d" .Id}}'
+              >Creation Date : {{.CreationDate}}</a
+            >
+            <a href='{{printf "/artist%d" .Id}}'
+              >First Album : {{.FirstAlbum}}</a
+            >
           </div>
         </div>
-        {{end}}
+        {{end}} {{end}}
+      </div>
+      <div class="cardContainer">
+        {{range .}} {{if and (gt .Id 10) (lt .Id 21)}}
+        <div class="card">
+          <div class="image">
+            <img src="{{.Image}}" alt="" />
+          </div>
+          <div class="info">
+            <a href='{{printf "/artist%d" .Id}}'>{{.Name}}</a>
+            <a href='{{printf "/artist%d" .Id}}'
+              >Creation Date : {{.CreationDate}}</a
+            >
+            <a href='{{printf "/artist%d" .Id}}'
+              >First Album : {{.FirstAlbum}}</a
+            >
+          </div>
+        </div>
+        {{end}} {{end}}
+      </div>
+      <div class="cardContainer">
+        {{range .}} {{if and  (gt .Id 20) (lt .Id 31)}}
+        <div class="card">
+          <div class="image">
+            <img src="{{.Image}}" alt="" />
+          </div>
+          <div class="info">
+            <a href='{{printf "/artist%d" .Id}}'>{{.Name}}</a>
+            <a href='{{printf "/artist%d" .Id}}'
+              >Creation Date : {{.CreationDate}}</a
+            >
+            <a href='{{printf "/artist%d" .Id}}'
+              >First Album : {{.FirstAlbum}}</a
+            >
+          </div>
+        </div>
+        {{end}} {{end}}
+      </div>
+       <div class="cardContainer">
+        {{range .}} {{if and  (gt .Id 30) (lt .Id 41)}}
+        <div class="card">
+          <div class="image">
+            <img src="{{.Image}}" alt="" />
+          </div>
+          <div class="info">
+            <a href='{{printf "/artist%d" .Id}}'>{{.Name}}</a>
+            <a href='{{printf "/artist%d" .Id}}'
+              >Creation Date : {{.CreationDate}}</a
+            >
+            <a href='{{printf "/artist%d" .Id}}'
+              >First Album : {{.FirstAlbum}}</a
+            >
+          </div>
+        </div>
+        {{end}} {{end}}
+      </div>
+       <div class="cardContainer">
+        {{range .}} {{if and  (gt .Id 40) (lt .Id 51)}}
+        <div class="card">
+          <div class="image">
+            <img src="{{.Image}}" alt="" />
+          </div>
+          <div class="info">
+            <a href='{{printf "/artist%d" .Id}}'>{{.Name}}</a>
+            <a href='{{printf "/artist%d" .Id}}'
+              >Creation Date : {{.CreationDate}}</a
+            >
+            <a href='{{printf "/artist%d" .Id}}'
+              >First Album : {{.FirstAlbum}}</a
+            >
+          </div>
+        </div>
+        {{end}} {{end}}
+      </div>
+      <div class="cardContainer">
+        {{range .}} {{if and  (gt .Id 50) (lt .Id 61)}}
+        <div class="card">
+          <div class="image">
+            <img src="{{.Image}}" alt="" />
+          </div>
+          <div class="info">
+            <a href='{{printf "/artist%d" .Id}}'>{{.Name}}</a>
+            <a href='{{printf "/artist%d" .Id}}'
+              >Creation Date : {{.CreationDate}}</a
+            >
+            <a href='{{printf "/artist%d" .Id}}'
+              >First Album : {{.FirstAlbum}}</a
+            >
+          </div>
+        </div>
+        {{end}} {{end}}
       </div>
     </div>
   </body>
