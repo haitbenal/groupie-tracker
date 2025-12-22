@@ -12,6 +12,7 @@ func HandleForbiden(w http.ResponseWriter, r *http.Request) {
 		HandlerErr(w, "Forbidden", http.StatusForbidden)
 		return
 	}
+	
 	fmt.Println(r.URL.Path)
 	http.ServeFile(w, r, r.URL.Path[1:])
 }

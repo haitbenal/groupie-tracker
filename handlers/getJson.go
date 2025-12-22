@@ -10,6 +10,7 @@ func GetJson(URL string, data any) error {
 	if err != nil {
 		return err
 	}
+
 	defer res.Body.Close()
 	return json.NewDecoder(res.Body).Decode(data)
 }
