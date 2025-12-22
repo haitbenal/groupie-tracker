@@ -27,18 +27,18 @@
             <img src="{{.Image}}" alt="" />
           </div>
           <div class="info">
-            <a href='{{printf "/artist%d" .Id}}'>{{.Name}}</a>
-            <a href='{{printf "/artist%d" .Id}}'
+            <a href='{{printf "/artist/%d" .Id}}'>{{.Name}}</a>
+            <a href='{{printf "/artist/%d" .Id}}'
               >Creation Date : {{.CreationDate}}</a
             >
-            <a href='{{printf "/artist%d" .Id}}'
+            <a href='{{printf "/artist/%d" .Id}}'
               >First Album : {{.FirstAlbum}}</a
             >
           </div>
         </div>
         {{end}} {{end}}
       </div>
-      <div class="cardContainer">
+      <!-- <div class="cardContainer">
         {{range .}} {{if and (gt .Id 10) (lt .Id 21)}}
         <div class="card">
           <div class="image">
@@ -127,7 +127,7 @@
           </div>
         </div>
         {{end}} {{end}}
-      </div>
+      </div> -->
     </div>
   </body>
 </html>
