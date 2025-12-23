@@ -82,7 +82,7 @@
 }
 .card .info a {
   color: #fcfcfc;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -96,5 +96,5 @@
   width: 100%;
   height: 100%;
   z-index: 99;
-  opacity: 0.8;
+  opacity: 0.9;
 }
