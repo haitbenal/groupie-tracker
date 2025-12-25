@@ -100,3 +100,40 @@ header {
     text-align: center;
     text-transform: uppercase;
 }
+
+.section-2 {
+    margin-top: 40px;
+    width: 100%;
+    height: 50dvh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px 21px;
+}
+
+.lift-said {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.right-said {
+    width: auto;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* align-items: flex-start; */
+}
+.right-said img {
+    width: 26vw;
+}
+
+.lift-said h1{
+    font-size: 4dvw;
+    color: #ffffff;
+}
+.lift-said p{
+    font-size: 1dvw;
+    color: #ffffff;
+}
