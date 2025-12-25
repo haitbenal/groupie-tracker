@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     font-family: "Bellefair";
+    font-weight: 400;
 }
 
 body {
@@ -51,7 +52,7 @@ header {
     padding: 39px 0 0 0;
     position: relative;
     width: 100%;
-    height: 75dvh;
+    height: 85dvh;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -60,15 +61,15 @@ header {
 }
 
 .circul {
-    width: 1000px;
-    height: 1000px;
+    width: 1053px;
+    height: 1030px;
     border-radius: 50%;
-    border: 9px solid #fff;
-    box-shadow: 0px 0px 18px 3px #fff;
+    border: 13px solid #fff;
+    box-shadow: 0px 0px 43px 3px #fff;
 }
 
 #rap-hero {
-    max-width: 80dvh;
+    max-width: 90dvh;
     position: absolute;
 }
 
@@ -82,16 +83,20 @@ header {
 } */
 
 .h-title {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
     display: flex;
-    background: rgb(37 37 37 / 25%);
+    background: rgb(2 2 2 / 22%);
     flex-direction: column;
     align-items: center;
     padding: 27px;
+    overflow: hidden;
 }
 
 #h1-hero {
     color: #ffffff;
-    font-size: 7dvw;
+    font-size: 4dvw;
     text-align: center;
     text-transform: uppercase;
 }
