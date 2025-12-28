@@ -1,18 +1,21 @@
 package handlers
 
 import (
-	"fmt"
 	"net/http"
 	"os"
+	"strings"
 )
 
 func HandleForbiden(w http.ResponseWriter, r *http.Request) {
-	info, err := os.Stat(r.URL.Path[1:])
-	if err != nil || info.IsDir() {
-		HandlerErr(w, "Forbidden", http.StatusForbidden)
+	// make the access to files directory forbidden
+	file, err := os.Stat(strings.TrimPrefix(r.URL.Path, "/"))
+	if err != nil {
+		HandelError(w, "Page Not found", http.StatusNotFound)
 		return
 	}
-	
-	fmt.Println(r.URL.Path)
+	if file.IsDir() {
+		HandelError(w, "Forbidden", http.StatusForbidden)
+		return
+	}
 	http.ServeFile(w, r, r.URL.Path[1:])
 }
