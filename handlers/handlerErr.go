@@ -4,19 +4,18 @@ import (
 	"net/http"
 )
 
-type info struct {
-	Code        int
-	Description string
+type Data struct {
+	Code  int
+	Error string
 }
 
-func HandlerErr(w http.ResponseWriter, description string, code int) {
-	pageErr := info{Code: code, Description: description}
-	if ErrParse != nil {
-		w.WriteHeader(code)
-		Temp.ExecuteTemplate(w, "errorePage.html", pageErr)
-		return
+func HandelError(w http.ResponseWriter, des string, code int) {
+	info := Data{Code: code, Error: des}
+	if Err != nil {
+		info = Data{Code: http.StatusInternalServerError, Error: "Internal Server Error"}
+		w.WriteHeader(http.StatusInternalServerError)
+		Temp.ExecuteTemplate(w, "errorPage.html", info)
 	}
 	w.WriteHeader(code)
-	Temp.ExecuteTemplate(w, "errorePage.html", pageErr)
-
+	Temp.ExecuteTemplate(w, "errorPage.html", info)
 }
