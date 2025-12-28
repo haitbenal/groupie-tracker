@@ -1,139 +1,196 @@
-@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Bellefair";
-    font-weight: 400;
+    font-family: "Poppins";
+    font-weight: 4auto00;
+    color: #fff;
 }
 
 body {
-    background-color: #0D0D0D;
+    background-color: #111110;
+    height: 300dvh;
+}
+
+.root,
+:root {
+    /* Fluid base font-size: scales between 14px and 18px */
+    font-size: clamp(14px, 1.6vw, 18px);
+}
+
+.header {
+    width: 100%;
+    height: 100dvh;
+    background: #ffc852;
+    background: linear-gradient(12deg, rgba(255, 200, 82, 1) 0%, rgba(255, 127, 15, 1) 50%, rgba(214, 79, 45, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
 }
 
 header {
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    gap: 20px;
     padding: 20px;
-
+    align-items: center;
+    justify-content: space-around;
 }
 
-#list-head {
+#header-logo {
+    max-width: 10dvw;
+}
+
+#header-list {
+    width: 35%;
+    height: auto;
+    padding: 15px;
+    border-radius: 50px;
     list-style-type: none;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    gap: 4dvw;
+    gap: 20px;
+    background-color: rgb(255 255 255 / 22%);
+    backdrop-filter: blur(41px);
+    -webkit-backdrautoop-filter: blur(10px);
+    /* For compatibility */
 }
 
-#list-head il {
-    margin: 10px;
+#header-list li {
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
     color: #fff;
-    font-size: 2.5dvh;
-}
-
-
-#h-logo {
-    max-width: 100px;
 }
 
 .hero {
     width: 100%;
     height: auto;
-}
-
-#elements-hero {
-    margin: 15px 0px 0px 0px;
-    padding: 39px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    width: 100%;
-    height: 85dvh;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-start;
-    overflow: hidden;
 }
 
-.circul {
-    width: 1053px;
-    height: 1030px;
-    border-radius: 50%;
-    border: 13px solid #fff;
-    box-shadow: 0px 0px 43px 3px #fff;
-}
-
-#rap-hero {
-    max-width: 90dvh;
-    position: absolute;
-}
-
-/* #rap-hero::after {
-    content: "";
+#img-hero {
+    /* Make hero image responsive whether it's an <img> or element with background */
+    max-width: 100dvh;
+    width: clamp(256px, 99vw, 900px);
+    height: auto;
     display: block;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-} */
+    object-fit: cover;
+}
 
-.h-title {
+.tyext-cader {
     position: absolute;
-    width: 100%;
-    bottom: 0px;
+    width: clamp(260px, 90%, 900px);
+    height: auto;
+    background-color: #111110c2;
+    color: #fff;
+    padding: 20px;
     display: flex;
-    background: rgb(2 2 2 / 22%);
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 27px;
-    overflow: hidden;
-}
-
-#h1-hero {
-    color: #ffffff;
-    font-size: 4dvw;
     text-align: center;
-    text-transform: uppercase;
+    bottom: 23%;
 }
 
-.section-2 {
-    margin-top: 40px;
+.tyext-cader h1 {
+    font-family: "BBH Bartle";
+    font-weight: 400;
+    margin: 0px 0 20px 0;
+    font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #header-logo {
+        max-width: 28vw;
+    }
+
+    #header-list {
+        width: 90%;
+        padding: 12px;
+        border-radius: 14px;
+        gap: 8px;
+    }
+
+    #header-list li {
+        font-size: 0.95rem;
+    }
+
+    .tyext-cader {
+        width: 92%;
+        bottom: 6%;
+        padding: 14px;
+    }
+
+    #img-hero {
+        width: 150%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #header-list li {
+        font-size: 1.1rem;
+    }
+
+    .tyext-cader h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.list-artist {
     width: 100%;
-    height: 50dvh;
+    height: auto;
+    padding: 2%;
+}
+
+.list-artist h2 {
+    color: #fff;
+    font-family: "BBH Bartle";
+    font-size: clamp(1.4rem, 1.4vw, 0.4rem);
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.artist-cards {
+    display: flex;
+
+}
+
+.artist-cards {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 20px 21px;
+    padding: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.lift-said {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.artist {
+    flex: 0 0 calc(25% - 16px);
+    /* 100% / 4 = 25% */
+    margin: 78px 10px;
 }
 
-.right-said {
-    width: auto;
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* align-items: flex-start; */
-}
-.right-said img {
-    width: 26vw;
-}
-
-.lift-said h1{
-    font-size: 4dvw;
-    color: #ffffff;
-}
-.lift-said p{
-    font-size: 1dvw;
-    color: #ffffff;
+#art-img {
+    max-width: 100%;
 }
