@@ -16,7 +16,8 @@ func HandleHome(w http.ResponseWriter,r *http.Request){
 		HandelError(w, "Page Not Found", http.StatusNotFound)
 		return
 	}
-	err := 	Temp.ExecuteTemplate(w, "index.html", nil)
+	data := FetchData()
+	err := 	Temp.ExecuteTemplate(w, "index.html", data)
 	if err != nil {
 		HandelError(w, "Internal Server Error", http.StatusInternalServerError)
 		return
