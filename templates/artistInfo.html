@@ -26,6 +26,7 @@
             <h2>{{ .Name }}</h2>
             <h2>{{ .Data }}</h2>
           </div>
+          <p>First Album : {{.Album}}</p>
           <ul id="mem-list">
             {{ range $i, $member := .Members }}
             <li>{{ $member }}</li>
@@ -34,7 +35,7 @@
         </div>
       </div>
       <div class="details01">
-
+        
       </div>
     </div>
   </div>

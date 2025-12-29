@@ -22,6 +22,10 @@ func HandleInfo(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	data := GetArtist(allartist, userID)
+	if data  == nil {
+		HandelError(w, "Bad Request", http.StatusBadRequest)
+		return
+	}
 	errpage := Temp.ExecuteTemplate(w, "artistInfo.html", data)
 	if errpage != nil {
 		HandelError(w, "hhh Server Error", http.StatusInternalServerError)

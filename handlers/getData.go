@@ -12,6 +12,10 @@ type Artist struct {
 	Image   string   `json:"image"`
 	Members []string `json:"members"`
 	Data    int      `json:"creationDate"`
+	Album string 	`json:"firstAlbum"`	
+	Urllocations string `json:"locations"`
+	Urlconcertdates string `json:"concertDates"`	
+	Urlrelations string `json:"relations"`	
 }
 
 

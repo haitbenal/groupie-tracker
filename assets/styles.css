@@ -265,7 +265,7 @@ header {
 
 
 .information {
-    width: auto;
+    width: 50%;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -320,7 +320,9 @@ header {
     justify-content: space-around;
     gap: 10px;
 }
-
+.tewtarea > * {
+    color: #111110;
+}
 .h-details>* {
     color: #111110;
 }
@@ -328,9 +330,10 @@ header {
 #mem-list {
     /* margin-left: 1rem; */
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    flex-direction: column;
+    gap: 5px;
     list-style: none;
+    align-items: flex-start;
 }
 
 #mem-list span {
