@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Artits - {{ .Name }}</title>
+  <link rel="stylesheet" href="/assets/styles.css">
 </head>
+
 <body>
-  
+  <div class="header artistss">
+    <header>
+      <img src="/assets/logo.webp" alt="logo" id="header-logo">
+      <ul id="header-list">
+        <li>Home</li>
+        <li>Artists</li>
+        <li>About</li>
+      </ul>
+    </header>
+    <div class="heroartist">
+      <div class="information">
+        <img src="{{ .Image }}" alt="" srcset="" id="img-artits">
+        <div class="tewtarea">
+          <div class="h-details">
+            <h2>{{ .Name }}</h2>
+            <h2>{{ .Data }}</h2>
+          </div>
+          <ul id="mem-list">
+            {{ range $i, $member := .Members }}
+            <li>{{ $member }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      <div class="details01">
+
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
