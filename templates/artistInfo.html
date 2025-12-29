@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artits - {{ .Name }}</title>
+  <title>Artits - {{ .ArtitsInfo.Name }}</title>
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 
@@ -20,22 +20,39 @@
     </header>
     <div class="heroartist">
       <div class="information">
-        <img src="{{ .Image }}" alt="" srcset="" id="img-artits">
+        <img src="{{ .ArtitsInfo.Image }}" alt="" srcset="" id="img-artits">
         <div class="tewtarea">
           <div class="h-details">
-            <h2>{{ .Name }}</h2>
-            <h2>{{ .Data }}</h2>
+            <h2>{{ .ArtitsInfo.Name }}</h2>
+            <h2>{{ .ArtitsInfo.Data }}</h2>
           </div>
-          <p>First Album : {{.Album}}</p>
+          <p>First Album : {{.ArtitsInfo.Album}}</p>
           <ul id="mem-list">
-            {{ range $i, $member := .Members }}
+            {{ range $i, $member := .ArtitsInfo.Members }}
             <li>{{ $member }}</li>
             {{ end }}
           </ul>
         </div>
       </div>
       <div class="details01">
-        
+        {{ if .LocationsInfo }}
+        <ul>
+          {{ range .LocationsInfo.Location }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+        {{ end }}
+
+      </div>
+      <div class="details01">
+        {{ if .DatesInfo }}
+        <ul>
+          {{ range .DatesInfo.Dateslist }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+        {{ end }}
+
       </div>
     </div>
   </div>

@@ -22,11 +22,24 @@ func HandleInfo(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	data := GetArtist(allartist, userID)
-	if data  == nil {
+	if data == nil {
 		HandelError(w, "Bad Request", http.StatusBadRequest)
 		return
 	}
-	errpage := Temp.ExecuteTemplate(w, "artistInfo.html", data)
+
+	data_location := FetchLocations(data.Urllocations)
+	if data_location == nil {
+		HandelError(w, "Bad Request", http.StatusBadRequest)
+		return
+	}
+	data_dates := FetchDates(data.Urlconcertdates)
+	if data_dates == nil {
+		HandelError(w, "Bad Request", http.StatusBadRequest)
+		return
+	}
+	final := InfosPage{ArtitsInfo: *data, LocationsInfo: *data_location, DatesInfo: *data_dates}
+
+	errpage := Temp.ExecuteTemplate(w, "artistInfo.html", final)
 	if errpage != nil {
 		HandelError(w, "hhh Server Error", http.StatusInternalServerError)
 		return
