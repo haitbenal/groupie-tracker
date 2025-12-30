@@ -7,7 +7,7 @@
     padding: 0;
     font-family: "Poppins";
     font-weight: 4auto00;
-    color: #fff;
+    color: #ffffff;
 }
 
 body {
@@ -344,6 +344,21 @@ header {
     margin-right: 1rem;
 }
 
-.details01 {
-    
+.details01 ul li{
+     color: #111110;
+}
+
+.arti-info {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-evenly;
+     background: #fff;
+     border-radius: 20px;
+     padding: 3rem;
+     gap: 4rem;
+     margin-top: 20px;
+}
+.details01 > * {
+    color: #111110;
 }

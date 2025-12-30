@@ -34,25 +34,36 @@
           </ul>
         </div>
       </div>
-      <div class="details01">
-        {{ if .LocationsInfo }}
-        <ul>
-          {{ range .LocationsInfo.Location }}
-          <li>{{ . }}</li>
+      <div class="arti-info">
+        <div class="details01">
+          {{ if .LocationsInfo }}
+          <ul>
+            {{ range .LocationsInfo.Location }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
           {{ end }}
-        </ul>
-        {{ end }}
-
-      </div>
-      <div class="details01">
-        {{ if .DatesInfo }}
-        <ul>
-          {{ range .DatesInfo.Dateslist }}
-          <li>{{ . }}</li>
+        </div>
+        <div class="details01">
+          {{ if .DatesInfo }}
+          <ul>
+            {{ range .DatesInfo.Dateslist }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
           {{ end }}
-        </ul>
-        {{ end }}
-
+  
+        </div>
+          <div class="details01">
+          {{ if .Relationsinfo }}
+          <ul>
+            {{ range $key, $value := .Relationsinfo.Relation }}
+            <li>{{ $key }} : {{ range $value }} {{.}} {{end}}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
+  
+        </div>
       </div>
     </div>
   </div>

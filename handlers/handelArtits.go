@@ -23,25 +23,30 @@ func HandleInfo(w http.ResponseWriter, r *http.Request) {
 	}
 	data := GetArtist(allartist, userID)
 	if data == nil {
-		HandelError(w, "Bad Request", http.StatusBadRequest)
+		HandelError(w, "Not Found", http.StatusNotFound)
 		return
 	}
 
 	data_location := FetchLocations(data.Urllocations)
 	if data_location == nil {
-		HandelError(w, "Bad Request", http.StatusBadRequest)
+		HandelError(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
 	data_dates := FetchDates(data.Urlconcertdates)
 	if data_dates == nil {
-		HandelError(w, "Bad Request", http.StatusBadRequest)
+		HandelError(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
-	final := InfosPage{ArtitsInfo: *data, LocationsInfo: *data_location, DatesInfo: *data_dates}
+	data_reataltions := FetchRelations(data.Urlrelations)
+	if data_reataltions == nil {
+		HandelError(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
 
+	final := InfosPage{ArtitsInfo: *data, LocationsInfo: *data_location, DatesInfo: *data_dates, Relationsinfo: *data_reataltions}
 	errpage := Temp.ExecuteTemplate(w, "artistInfo.html", final)
 	if errpage != nil {
-		HandelError(w, "hhh Server Error", http.StatusInternalServerError)
+		HandelError(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
 }
