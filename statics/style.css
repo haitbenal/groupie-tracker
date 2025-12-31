@@ -1,0 +1,375 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Bellefair";
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0d0d0d;
+  overflow-x: hidden;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.container .nave {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  max-height: 100px;
+  min-height: 100px;
+}
+.container .nave ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.container .nave li a {
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+}
+.container .nave li a img {
+  width: 100px;
+  height: 50px;
+  object-fit: contain;
+}
+.container .hero {
+  width: 100%;
+  height: calc(100vh - 100px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.container .hero .info {
+  width: 100vw;
+  text-align: center;
+  padding: 10px;
+  background-color: #0d0d0d7a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+}
+.container .info h1 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 70px;
+  text-align: center;
+}
+.container .circle {
+  position: absolute;
+  top: 65%;
+  right: 30%;
+  transform: translate(50%, -50%) rotate(130deg);
+  width: 111vh;
+  height: 111vh;
+  border-radius: 100%;
+  border: 10px solid;
+  border-color: white;
+  box-shadow: 0px 2px 20px 2px white;
+}
+
+.container .circle img {
+  transform: rotate(-130deg);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 998px) {
+  .container .info h1 {
+    font-size: 50px;
+  }
+  .container .circle {
+    width: 90vh;
+    height: 90vh;
+  }
+}
+@media (max-width: 768px) {
+  .container .nave li a {
+    font-size: 16px;
+  }
+  .container .hero .info {
+    height: 150px;
+  }
+  .container .info h1 {
+    font-size: 30px;
+  }
+  .container .circle {
+    width: 65vh;
+    height: 65vh;
+  }
+}
+.main {
+  position: relative;
+  background-color: #0d0d0d;
+}
+.main .container2,
+.container3 {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.main .container2 .mainSides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.fside,
+.sside {
+  flex: 1;
+}
+.main .container2 .fDescrip h1 {
+  color: white;
+  font-size: 80px;
+  line-height: 150px;
+}
+.main .container2 .sDescrip p {
+  color: white;
+  font-size: 30px;
+  flex: 1;
+}
+.sside {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fside {
+  background-color: #0d0d0d7a;
+}
+.sside .image {
+  width: 100%;
+}
+.sside .image img {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 99;
+}
+.sside .circle {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 77%;
+  height: 66%;
+  border: 10px solid white;
+  border-radius: 100%;
+  box-shadow: 0px 2px 20px 2px white;
+}
+.container3 h1 {
+  color: white;
+  font-size: 70px;
+  text-align: center;
+  margin: 70px 0px 20px 0px;
+}
+
+.cardeMusic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  width: 100%;
+}
+
+.card1 img,
+.card2 img,
+.card3 img,
+.card4 img,
+.card5 img,
+.card6 img,
+.card7 img,
+.card8 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.card1,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6,
+.card7,
+.card8 {
+  position: relative;
+  transition: 5s ease;
+}
+.card {
+  position: relative;
+  transition: 5s ease;
+}
+
+.container3 .info {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0d0d0de8;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease;
+  overflow: hidden;
+}
+.container3 .info h1 a {
+  color: white;
+  font-size: 60px;
+  text-align: center;
+}
+.card1:hover .info,
+.card2:hover .info,
+.card3:hover .info,
+.card4:hover .info,
+.card5:hover .info,
+.card6:hover .info,
+.card7:hover .info,
+.card8:hover .info {
+  padding: 5px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+}
+.card:hover .info {
+  padding: 5px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+}
+.lodemore {
+  padding: 40px;
+}
+.lodemore a {
+  padding: 10px;
+  background-color: white;
+  color: black;
+  text-transform: capitalize;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.footer {
+  margin-top: 70px;
+  padding: 0px 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+}
+.footer .logo {
+  padding: 10px;
+}
+.footer .logo img {
+  width: 130px;
+  object-fit: cover;
+}
+.footer .contact {
+  padding: 10px;
+}
+.footer .contact ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer .contact ul li {
+  padding: 10px;
+}
+.footer .docs {
+  padding: 10px;
+}
+.footer .contact ul li a {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer .docs a {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+@media (max-width: 1200px) {
+  .cardeMusic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 986px) {
+  .main .container2 .mainSides {
+    flex-direction: column;
+  }
+  .sside .circle {
+    width: 450px;
+    height: 450px;
+  }
+  .main .container2 .fDescrip h1 {
+    line-height: 100px;
+  }
+  .cardeMusic {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .sside .circle {
+    display: none;
+  }
+  .main .container2 .fDescrip h1 {
+    line-height: 55px;
+    font-size: 40px;
+  }
+  .cardeMusic {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .main .container2 .sDescrip p {
+    font-size: 20px;
+  }
+  .container3 h1 {
+    font-size: 40px;
+  }
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  .footer div {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,72 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artits - {{ .ArtitsInfo.Name }}</title>
-  <link rel="stylesheet" href="/assets/styles.css">
-</head>
-
-<body>
-  <div class="header artistss">
-    <header>
-      <img src="/assets/logo.webp" alt="logo" id="header-logo">
-      <ul id="header-list">
-        <li>Home</li>
-        <li>Artists</li>
-        <li>About</li>
-      </ul>
-    </header>
-    <div class="heroartist">
-      <div class="information">
-        <img src="{{ .ArtitsInfo.Image }}" alt="" srcset="" id="img-artits">
-        <div class="tewtarea">
-          <div class="h-details">
-            <h2>{{ .ArtitsInfo.Name }}</h2>
-            <h2>{{ .ArtitsInfo.Data }}</h2>
-          </div>
-          <p>First Album : {{.ArtitsInfo.Album}}</p>
-          <ul id="mem-list">
-            {{ range $i, $member := .ArtitsInfo.Members }}
-            <li>{{ $member }}</li>
-            {{ end }}
-          </ul>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/statics/artistInfo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
+    <title>{{.Artist.Name }}</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nave">
+        <ul>
+          <li><a href="/">HOME</a></li>
+          <li>
+            <a href="/"><img src="/statics/Logo.webp" alt="logo" /></a>
+          </li>
+          <li><a href="/artistes">GALLERY</a></li>
+        </ul>
+        s
       </div>
-      <div class="arti-info">
-        <div class="details01">
-          {{ if .LocationsInfo }}
-          <ul>
-            {{ range .LocationsInfo.Location }}
-            <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-          {{ end }}
+      <div class="hero">
+        <div class="AInfo">
+          <div class="image">
+            <img src="{{.Artist.Image }}" alt="" />
+            <h3>{{.Artist.Name }}</h3>
+          </div>
+          <h1>about Artist</h1>
+          <div class="aboutArtist">
+            <div class="memebers">
+              <h1>members</h1>
+              {{range .Artist.Members}}
+              <p>{{.}}</p>
+              {{end}}
+            </div>
+            <div class="creationDate">
+              <h1>Creation Date</h1>
+              <p>{{.Artist.CreationDate}}</p>
+            </div>
+            <div class="FirstAlbum">
+              <h1>First Album</h1>
+              <p>{{.Artist.FirstAlbum}}</p>
+            </div>
+          </div>
         </div>
-        <div class="details01">
-          {{ if .DatesInfo }}
-          <ul>
-            {{ range .DatesInfo.Dateslist }}
-            <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-          {{ end }}
-  
-        </div>
-          <div class="details01">
-          {{ if .Relationsinfo }}
-          <ul>
-            {{ range $key, $value := .Relationsinfo.Relation }}
-            <li>{{ $key }} : {{ range $value }} {{.}} {{end}}</li>
-            {{ end }}
-          </ul>
-          {{ end }}
-  
+        <div class="ALocations">
+          <h1>Artist Info</h1>
+          <div class="locationData">
+            <div class="infoplaces">
+              <h3>location Data</h3>
+              {{range .Location.Location}}
+              <p>{{.}}</p>
+              {{end}}
+            </div>
+            <div class="infodates">
+              <h3>concert Dates</h3>
+              {{range .Dates.Dates}}
+              <p>{{.}}</p>
+              {{end}}
+            </div>
+            <div class="inforelations">
+              <h3>Relation Dates</h3>
+              {{range .Relation.DatesLocations}}
+              {{ range . }}<p> {{ . }}</p> {{end}}
+              {{end}}
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

@@ -1,0 +1,151 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Bellefair";
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0d0d0d;
+  overflow-x: hidden;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  overflow: hidden;
+}
+
+.container .nave {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  max-height: 100px;
+  min-height: 100px;
+}
+.container .nave ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.container .nave li a {
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+}
+.container .nave li a img {
+  width: 100px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.container .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+.container .hero img {
+  width: 30%;
+  height: 30%;
+  border-radius: 100%;
+}
+
+.container .hero .AInfo,
+.ALocations {
+  width: 100%;
+  text-align: center;
+}
+.AInfo h1,
+.ALocations h1 {
+  font-size: 60px;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.container .hero .aboutArtist {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.container .hero .image h3 {
+  margin: 20px 0px 30px 0px;
+  color: white;
+  font-size: 60px;
+}
+.memebers,
+.creationDate,
+.FirstAlbum {
+  display: flex;
+  flex: 1;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+.memebers h1,
+.creationDate h1,
+.FirstAlbum h1,
+.locationData h3 {
+  color: white;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.memebers p,
+.creationDate p,
+.FirstAlbum p,
+.locationData p,
+.infoplaces p,
+.infodates p {
+  color: #717171;
+  font-size: 20px;
+  margin-bottom: 5px;
+  text-align: start;
+}
+
+.locationData {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+}
+.infoplaces,
+.infodates,
+.inforelations {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  flex: 1;
+}
+@media (max-width: 768px) {
+  .container .hero .aboutArtist,
+  .locationData {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .AInfo h1,
+  .ALocations h1 {
+    font-size: 40px;
+  }
+  .memebers h1,
+  .creationDate h1,
+  .FirstAlbum h1,
+  .locationData h3 {
+    font-size: 20px;
+  }
+  .memebers p,
+  .creationDate p,
+  .FirstAlbum p,
+  .locationData p,
+  .infoplaces p,
+  .infodates p {
+    font-size: 15px;
+  }
+}

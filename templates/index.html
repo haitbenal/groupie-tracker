@@ -1,65 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Groupie-Tracker</title>
-  <link rel="stylesheet" href="/assets/styles.css">
-</head>
-
-<body>
-  <div class="header">
-    <header>
-      <img src="/assets/logo.webp" alt="logo" id="header-logo">
-      <ul id="header-list">
-        <li>Home</li>
-        <li>Artists</li>
-        <li>About</li>
-      </ul>
-    </header>
-    <div class="hero">
-      <img src="/assets/lilwayen.png" alt="" srcset="" id="img-hero">
-      <div class="tyext-cader">
-        <h1>Discover bands. Explore concerts. Follow the music.</h1>
-        <p>Explore detailed information about artists and bands from around the world.
-          Track their history, members, albums, and discover where and when they perform live.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/statics/style.css" />
+    <title>Groupie Tracker</title>
+  </head>
+  <body>
+    <div id="container" class="container">
+      <div class="nave">
+        <ul>
+          <li><a href="/">HOME</a></li>
+          <li>
+            <a href="/"><img src="/statics/Logo.webp" alt="logo" /></a>
+          </li>
+          <li><a href="/artistes">GALLERY</a></li>
+        </ul>
+        s
+      </div>
+      <div class="circle">
+        <img
+          src="/statics/birds-in-the-trap-sing-mcknight-music-producer-musician-hip-hop-music-way-back-others-da6c6f23acaa596f3eb7c1163ac2ad0a.png"
+          alt=""
+        />
+      </div>
+      <div class="hero">
+        <div class="info">
+          <h1>We preserve History</h1>
+          <h1>OF MUSICS</h1>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="list-artist">
-    <h2>Recently Edited Artists</h2>
-    <div class="artist-cards">
-      <!-- style of list artist -->
-      <!-- <div class="artist">
-        <img src="/assets/rap-01.png" alt="" srcset="" id="art-img">
-        <h4>Name</h4>
-        <p>creationDate</p>
-      </div> -->
-      {{ range .}}
-      <div class="artist">
-        <img src="{{.Image}}" alt="" srcset="" id="art-img">
-        <div class="art-bar">
-          <div class="art-text">
-            <h4>{{.Name}}</h4>
-            <p>{{.Data}}</p>
+    <div class="main">
+      <div class="container2">
+        <div class="mainSides">
+          <div class="sside">
+            <div class="image">
+              <div class="circle"></div>
+              <img
+                src="/statics/tupac_png_transparent_image_by_ongpng_dglvao3-375w-2x-removebg-preview.png"
+                alt=""
+              />
+            </div>
           </div>
-          <div class="showmore">
-            <a href="./artist/{{.ID}}"> <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                  <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                </g>
-              </svg>
-            </a>
+          <div class="fside">
+            <div class="fDescrip">
+              <h1>
+                The World’s <br />
+                Leading Statue <br />
+                MUSIC
+              </h1>
+            </div>
+            <div class="sDescrip">
+              <p>
+During your life, never stop dreaming. No one can take away your dreams. They may try to hold you down, but always remember who you are and what you stand for. Keep pushing, keep believing, and never let anyone dim your light.
+              </p>
+            </div>
           </div>
         </div>
-
       </div>
-      {{ end }}
+      <div id="container3" class="container3">
+        <h1>TOP ARTIST NOW</h1>
+        <div class="cardeMusic">
+          {{ range . }} {{if lt .Id 9}}
+          <div class="card{{.Id}}">
+            <img src="{{.Image}}" alt="" />
+            <div class="info">
+              <h1><a href="artist/{{.Id}}">{{.Name}}</a></h1>
+            </div>
+          </div>
+          {{end}} {{end}}
+        </div>
+        <div class="lodemore">
+          <a href="artistes">Load More</a>
+        </div>
+      </div>
     </div>
-</body>
-
+    <div class="footer">
+      <div>
+        <div class="logo"><img src="/statics/Logo.webp" alt="" /></div>
+      </div>
+      <div>
+        <div class="contact">
+          <ul>
+            <li><a href="#container">HOME</a></li>
+            <li><a href="/artistes">GALLERY</a></li>
+            <li><a href="#container3">ARTIST</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="docs">
+          <a href="https://github.com/yelhaoua/groupie-tracker/blob/yacoub/README.md">Read Me</a>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
